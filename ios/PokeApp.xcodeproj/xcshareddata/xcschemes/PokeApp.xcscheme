@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-               BuildableName = "Akebono.app"
-               BlueprintName = "Akebono"
-               ReferencedContainer = "container:Akebono.xcodeproj">
+               BuildableName = "PokeApp.app"
+               BlueprintName = "PokeApp"
+               ReferencedContainer = "container:PokeApp.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "00E356ED1AD99517003FC87E"
-               BuildableName = "AkebonoTests.xctest"
-               BlueprintName = "AkebonoTests"
-               ReferencedContainer = "container:Akebono.xcodeproj">
+               BuildableName = "PokeAppTests.xctest"
+               BlueprintName = "PokeAppTests"
+               ReferencedContainer = "container:PokeApp.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -55,9 +55,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "Akebono.app"
-            BlueprintName = "Akebono"
-            ReferencedContainer = "container:Akebono.xcodeproj">
+            BuildableName = "PokeApp.app"
+            BlueprintName = "PokeApp"
+            ReferencedContainer = "container:PokeApp.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -72,9 +72,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "Akebono.app"
-            BlueprintName = "Akebono"
-            ReferencedContainer = "container:Akebono.xcodeproj">
+            BuildableName = "PokeApp.app"
+            BlueprintName = "PokeApp"
+            ReferencedContainer = "container:PokeApp.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

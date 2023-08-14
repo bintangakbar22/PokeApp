@@ -7,11 +7,11 @@
 #define TIMEOUT_SECONDS 600
 #define TEXT_TO_LOOK_FOR @"Welcome to React"
 
-@interface AkebonoTests : XCTestCase
+@interface PokeAppTests : XCTestCase
 
 @end
 
-@implementation AkebonoTests
+@implementation PokeAppTests
 
 - (BOOL)findSubviewInView:(UIView *)view matching:(BOOL (^)(UIView *view))test
 {
