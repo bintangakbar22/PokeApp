@@ -22,7 +22,7 @@ const HomeScreen = () => {
           data={data}
           numColumns={2}
           contentContainerStyle={generalStyles.contentCenter}
-          keyExtractor={(_, _id): any => _?.id}
+          keyExtractor={item => `${item.id} ${Math.random()}`}
           onEndReached={__onEndReached}
           renderItem={({item, index}) => (
             <PokeCard

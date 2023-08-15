@@ -11,6 +11,7 @@ interface Iprops {
   order?: number;
   onPress: PressableProps['onPress'];
   isSelected?: boolean;
+  fromCompare?: boolean;
 }
 const PokeCard = (props: Iprops) => {
   return (
@@ -34,6 +35,7 @@ const PokeCard = (props: Iprops) => {
         <MainText
           type={'Regular'}
           paddingTop={16}
+          textTransform={props?.fromCompare ? 'capitalize' : 'none'}
           fontSize={16}
           color={props?.isSelected ? Colors.white : Colors.dark.neutral100}>
           {props?.name ?? ''}

@@ -86,7 +86,6 @@ const CompareScreen = () => {
                   propsForBackgroundLines: {
                     stroke: Colors.dark.neutral20,
                   },
-                  useShadowColorFromDataset: true,
                 }}
                 style={styles.barChart}
               />
@@ -137,6 +136,7 @@ const CompareScreen = () => {
                   order={index + 1}
                   isSelected={selected?.includes(item?.id)}
                   onPress={() => _handlerSelectedItem(item)}
+                  fromCompare
                 />
               )}
             />
