@@ -4,11 +4,11 @@ import {Platform, StyleSheet, View} from 'react-native';
 import Modal, {ModalProps} from 'react-native-modalbox';
 
 export type SwipeUpProps = {
-  height?: any;
-  isSwipeLine?: any;
+  height?: number;
+  isSwipeLine?: boolean;
   onClose?: () => void;
   children?: any;
-  visible?: any;
+  visible?: boolean;
   coverScreen?: any;
   styleInnerContainer?: any;
 } & ModalProps;
@@ -59,7 +59,7 @@ const stylesProps = ({height}: any) =>
       borderTopLeftRadius: 16,
       borderTopRightRadius: 16,
       height: height,
-      paddingBottom: Platform.OS == 'ios' ? 32 : 0,
+      paddingBottom: Platform.OS === 'ios' ? 32 : 0,
     },
   });
 

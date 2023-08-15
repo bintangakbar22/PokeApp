@@ -1,14 +1,13 @@
 /* eslint-disable react-native/no-inline-styles */
 /* eslint-disable react/no-unstable-nested-components */
 import React from 'react';
-import {SafeAreaView, StatusBar, StyleSheet} from 'react-native';
+import {Platform, SafeAreaView, StatusBar, StyleSheet} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 import {GestureHandlerRootView} from 'react-native-gesture-handler';
 import {Toast} from 'react-native-toast-message/lib/src/Toast';
 import {ToastContainer} from '../ToastContainer';
 import Colors from '@constants/colors';
-import {STATUSBAR_HEIGHT} from '@constants/functional';
 import {DetailScreen, SplashScreen} from '@components/screens';
 import BottomTabNavigatior from './BottomTab';
 const Stack = createStackNavigator<ParamList>();
@@ -42,11 +41,11 @@ export const RouteApp = () => {
 
   return (
     <SafeAreaView style={styles.safeAreaView}>
-      {/* <StatusBar
+      <StatusBar
         translucent
         barStyle={'dark-content'}
-        backgroundColor={'transparent'}
-      /> */}
+        backgroundColor={Colors.primary.base}
+      />
       <GestureHandlerRootView style={styles.gestureHandlerStyle}>
         <NavigationContainer>
           <Navigator />
@@ -65,7 +64,7 @@ const styles = StyleSheet.create({
   safeAreaView: {
     flex: 1,
     backgroundColor: Colors.white,
-    paddingTop: STATUSBAR_HEIGHT,
+    paddingTop: Platform.OS === 'ios' ? 20 : StatusBar.currentHeight,
   },
   gestureHandlerStyle: {
     flex: 1,

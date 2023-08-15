@@ -1,10 +1,10 @@
-import {StatusBar, StyleSheet, Text, View} from 'react-native';
+import {StyleSheet, Text, View} from 'react-native';
 import React, {useEffect} from 'react';
 import Fonts from '@constants/fonts';
 import Colors from '@constants/colors';
 import {useNavigation} from '@react-navigation/native';
 import {StackNavigationProp} from '@react-navigation/stack';
-import {Header, MainView} from '@components/atoms';
+import {MainView} from '@components/atoms';
 import Pokoicon from '@assets/svg/pokeball.svg';
 const SplashScreen = () => {
   const navigation =
@@ -13,17 +13,12 @@ const SplashScreen = () => {
   useEffect(() => {
     const timeout = setTimeout(() => {
       navigation.replace('BottomTabNavigator');
-    }, 3000);
+    }, 1000);
     return () => clearTimeout(timeout);
   }, [navigation]);
 
   return (
     <MainView style={styles.container}>
-      <StatusBar
-        backgroundColor={Colors.primary.base}
-        barStyle={'dark-content'}
-      />
-      <Header backgroundColor={Colors.primary.base} withoutBackButton />
       <Pokoicon width={160} height={160} />
       <View style={styles.bottomContainer}>
         <Text style={styles.title}>Pokemon App</Text>

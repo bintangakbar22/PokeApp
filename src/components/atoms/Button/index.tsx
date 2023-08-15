@@ -6,11 +6,10 @@ import {
   Image,
   TouchableOpacity,
   TouchableOpacityProps,
-  View,
   TextStyle,
   StyleProp,
 } from 'react-native';
-// import RightIcon from '@assets/svg/right.svg';
+import {MainView} from '../MainComponent';
 
 export type ButtonProps = {
   label?: string;
@@ -30,7 +29,6 @@ export type ButtonProps = {
   success?: boolean;
   primaryLight?: boolean;
   fontSize?: number;
-  rightIcon?: boolean;
   customDisabled?: boolean;
   textStyle?: StyleProp<TextStyle>;
 };
@@ -50,7 +48,6 @@ const Button = ({
   success = false,
   primaryLight = false,
   fontSize = 16,
-  rightIcon = false,
   borderColor = Colors.primary.base,
   borderWidth = 0,
   customDisabled = false,
@@ -78,7 +75,7 @@ const Button = ({
         ).container,
         style,
       ]}>
-      {iconLeft && <View style={{marginRight: 10}}>{iconLeft}</View>}
+      {iconLeft && <MainView marginRight={10}>{iconLeft}</MainView>}
       {icon && <Image source={icon} style={styles.icon} />}
       <Text
         style={[
@@ -100,7 +97,6 @@ const Button = ({
         ]}>
         {label}
       </Text>
-      {/* {rightIcon && <RightIcon style={styles.rightIcon} />} */}
     </TouchableOpacity>
   );
 };

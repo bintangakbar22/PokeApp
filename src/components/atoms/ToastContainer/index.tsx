@@ -1,11 +1,8 @@
 import Colors from '@constants/colors';
 import Fonts from '@constants/fonts';
-import {STATUSBAR_HEIGHT} from '@constants/functional';
 import React, {FC} from 'react';
 import {View, Text, StyleSheet} from 'react-native';
 import {ToastConfigParams} from 'react-native-toast-message';
-// import IconCloseWhite from '@assets/svg/ic_close_white.svg';
-// import IconCloseBlack from '@assets/svg/ic_close_black.svg';
 
 const ToastContainer: FC<ToastConfigParams<any>> = props => {
   if (props?.isVisible) {
@@ -34,17 +31,6 @@ const ToastContainer: FC<ToastConfigParams<any>> = props => {
           ]}>
           {props.text1}
         </Text>
-        {/* <TouchableOpacity
-            onPress={() => {
-              props?.onPress?.();
-              props.hide?.();
-            }}>
-            {props?.type === 'warning' ? (
-              <IconCloseBlack width={24} height={24} />
-            ) : (
-              <IconCloseWhite width={24} height={24} />
-            )}
-          </TouchableOpacity> */}
       </View>
     );
   } else {
@@ -53,14 +39,6 @@ const ToastContainer: FC<ToastConfigParams<any>> = props => {
 };
 
 const styles = StyleSheet.create({
-  safeAreaView: {
-    flex: 1,
-    backgroundColor: Colors.white,
-    paddingTop: STATUSBAR_HEIGHT,
-  },
-  gestureHandlerStyle: {
-    flex: 1,
-  },
   toastContainer: {
     position: 'absolute',
     zIndex: 999,

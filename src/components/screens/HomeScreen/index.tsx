@@ -1,20 +1,15 @@
-import {FlatList, Image, StatusBar, StyleSheet, View} from 'react-native';
+import {FlatList} from 'react-native';
 import React from 'react';
-import {Header, MainText, MainView, PokeCard} from '@components/atoms';
+import {Header, LoadingIndicator, MainView, PokeCard} from '@components/atoms';
 import Colors from '@constants/colors';
 import {useHomeScreen} from './useHomeScreen';
 import {generalStyles} from '@constants/styles';
 
 const HomeScreen = () => {
-  const {navigation, listStore, __onEndReached, data} = useHomeScreen();
+  const {navigation, __onEndReached, data, isLoading} = useHomeScreen();
 
   return (
     <MainView flex={1} backgroundColor={Colors.primary.base}>
-      <StatusBar
-        translucent
-        barStyle={'dark-content'}
-        backgroundColor={Colors.primary.base}
-      />
       <Header
         label="Pokemon App"
         backgroundColor={Colors.primary.base}
@@ -27,7 +22,7 @@ const HomeScreen = () => {
           data={data}
           numColumns={2}
           contentContainerStyle={generalStyles.contentCenter}
-          keyExtractor={(_, _id): any => _id}
+          keyExtractor={(_, _id): any => _?.id}
           onEndReached={__onEndReached}
           renderItem={({item, index}) => (
             <PokeCard
@@ -41,10 +36,9 @@ const HomeScreen = () => {
           )}
         />
       </MainView>
+      {isLoading ? <LoadingIndicator /> : null}
     </MainView>
   );
 };
 
 export {HomeScreen};
-
-const styles = StyleSheet.create({});

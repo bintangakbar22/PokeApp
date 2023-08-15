@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import {useNavigation} from '@react-navigation/native';
 import {StackNavigationProp} from '@react-navigation/stack';
 import {fetchList} from '@redux';
@@ -19,6 +20,8 @@ const useHomeScreen = () => {
 
   const listStore: any = useSelector((store: RootState) => store.list);
 
+  const isLoading = listStore?.loading;
+
   const data: any = listStore?.data;
 
   useEffect(() => {
@@ -30,9 +33,9 @@ const useHomeScreen = () => {
   }, [pagination]);
 
   const __onEndReached = () => {
-    const {nextPage, loading} = listStore;
+    const {nextPage} = listStore;
 
-    if (nextPage && !loading) {
+    if (nextPage && !isLoading) {
       setPagination(prevState => ({
         ...prevState,
         offset: pagination.offset + pagination.limit,
@@ -40,7 +43,7 @@ const useHomeScreen = () => {
     }
   };
 
-  return {navigation, __onEndReached, listStore, data};
+  return {navigation, __onEndReached, listStore, data, isLoading};
 };
 
 export {useHomeScreen};

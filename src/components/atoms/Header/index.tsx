@@ -13,7 +13,6 @@ import ArrowLeft from '@assets/svg/arrow_left.svg';
 import {NavigationContext} from '@react-navigation/native';
 import Colors from '@constants/colors';
 import Pokoicon from '@assets/svg/pokeball.svg';
-import {MainView} from '../MainComponent';
 
 type Props = {
   label?: string;
@@ -43,13 +42,9 @@ const Header = ({
   iconLeft,
   styleIconLeft,
   onPressIconLeft,
-  iconRight,
-  styleIconRight,
   styleContainer,
-  onPressIconRight,
   paddingHorizontal = 16,
   subLabelContent,
-  labelContent,
   colorLabel = Colors.white,
   backgroundColor = Colors.white,
   withoutBackButton = false,

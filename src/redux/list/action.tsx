@@ -48,6 +48,7 @@ export const fetchList = (params: any): any => {
     try {
       const res = await api.get(URL_PATH.list, {params: params});
       if (res?.status === 200) {
+        //render nextPage, if the response data is null then onEndReached from FlatList stop fetching more data
         const nextPage = res.data?.results?.length > 0 ? true : false;
         if (res?.data?.results?.length > 0) {
           const mapping = res?.data?.results?.map(async (obj: any) => {
@@ -66,7 +67,7 @@ export const fetchList = (params: any): any => {
         }
         dispatch(ListSuccess(res?.data?.results, nextPage, params));
       } else {
-        dispatch(ListFailed(res?.data));
+        dispatch(ListFailed(res?.data?.results));
       }
     } catch (err) {
       dispatch(ListFailed(err));

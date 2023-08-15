@@ -1,3 +1,4 @@
+/* eslint-disable react-native/no-inline-styles */
 import React from 'react';
 import {Dimensions} from 'react-native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
@@ -55,4 +56,3 @@ const BottomTabNavigatior = () => {
 };
 
 export default BottomTabNavigatior;
-const window = Dimensions.get('window');
